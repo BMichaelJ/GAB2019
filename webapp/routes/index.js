@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
     process.env.DB_NAME = "mydb";
   }
   if(!process.env.DB_COLLECTION) {
-    process.env.DB_COLLECTION = "photo";
+    process.env.DB_COLLECTION = "photos";
   }
 
   const collectionUrl = ("/dbs/"+process.env.DB_NAME+"/colls/"+process.env.DB_COLLECTION);
