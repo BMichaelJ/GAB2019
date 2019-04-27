@@ -54,8 +54,36 @@ In our resource group we will add a cosmosDB
 
 Time for a coffee while deployment is running. When the CosmosDB is deployed we need to copy some information again. 
 1.	Copy the URI and the keys to the notepad 
-2.	In the data explorer, create a database and collection, in the code I used “mydb” and “photo”
+2.	In the data explorer, create a database and collection, in the code I used “mydb” and “photos”
 3.	Set the partition key to /user
 4.	Keep the RU to 400
 
+Our logic app is the trigger of the application. We need it to trigger when a certain tweet is happening such as a hashtag #AzureSkane
+
+1.	Create a logic app, give it a name, add the resource group and location
+2.	In the logic app it will open the Logic App Designer
+3.	Locate and choose “When a tweet is happening”
+4.	Sign in with a twitter account (I created a new test twitter)
+5.	Add the Hashtag you want it to react to and set the interval
+6.	Click next step and choose the Computer Vision API
+7.	Select “Describe Image URL” add a parameter of “Image URL”
+8.	Add a twitter parameter named “Media Urls” (this will generate a for each loop)
+9.	Choose an action (important that the next step stays in the loop)
+10.	Add a CosmosDB action
+11.	Select Create or Update document
+12.	Give the connection a name (not important what you choose)
+13.	Select the resource group of your cosmosDB
+14.	Add the database we created (mydb)
+15.	Add the collection (photos)
+16.	In the document copy the text of the picture. Remember to use all the “” and comma. The guid() is located in dynamic content under expressions. Note that description content do not contain “ “
+
+
+
+Guid is a random generated ID, Description contains a caption and tags from the picture, UTCnow is our timestamp, url of the picture and the user that posted it.
+17.	Add a parameter Partition key
+18.	add Twitter name to it as seen on the picture (important it is in “ ”)
+ 
+
+19.	Click save
+20.	Click Run
 
