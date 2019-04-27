@@ -77,13 +77,68 @@ Our logic app is the trigger of the application. We need it to trigger when a ce
 15.	Add the collection (photos)
 16.	In the document copy the text of the picture. Remember to use all the “” and comma. The guid() is located in dynamic content under expressions. Note that description content do not contain “ “
 
+{
+"description": description,
+"id": "@{guid()}",
+"time": "@{utcNow()}",
+"url": "@{items('For_each')}",
+"user": "@{triggerBody()?['UserDetails']?['FullName']}"
+},
 
 
 Guid is a random generated ID, Description contains a caption and tags from the picture, UTCnow is our timestamp, url of the picture and the user that posted it.
+
 17.	Add a parameter Partition key
 18.	add Twitter name to it as seen on the picture (important it is in “ ”)
- 
+ "Name"
 
 19.	Click save
 20.	Click Run
+
+Go to twitter and create a post with the hashtag you added and add a picture you want described.
+Return to the logic app and wait for the result. The logic app should succeed. You can see the description of the picture. In the CosmosDB under data explorer the data from our tweet will be located. 
+
+#WebApp
+
+We want to show our results in a neat way than the CosmosDB information. 
+1.	Create a Web App resource to our resource group
+2.	Give it a global unique name, choose windows and code
+3.	Create a app service plan
+a.	Click on the App service plan
+b.	Click create new
+c.	Give it a name and choose the location used in your Resource Group
+d.	Select pricing tier
+e.	In the top choose Dev / Test
+f.	Select the F1 plan and click apply
+4.	Create the web app and wait for deployment.
+5.	In the Web app locate the configuration menu.
+6.	Add the following table to application settings (the name must be in capital to fit the code)
+
+
+Name	                     Value
+DB_NAME	                  mydb
+DB_COLLECTION	            photos
+DB_ENDPOINT	              CosmosDB URI
+DB_KEY	                   CosmosDB Key
+PROJECT	                  webapp
+
+
+Time to add the web app code to our website. The code is in a Github repository located here: https://github.com/JacobFoss/serverless-twitter-app If you want to change the database name in the code you can fork it and change it in the index.js 
+
+1.	Go to the web app in azure
+2.	Choose the deployment center 
+3.	Choose “External” source control
+4.	Choose Kudu engine
+5.	From the repository from git (https://github.com/BMichaelJ/GAB2019.git) 
+6.	Use the master branch by entering “master”
+7.	Set type to Git
+8.	Click create
+9.	When the deployment center is synced 
+10.	Go to the overview tab and click on the URL
+
+
+
+
+
+
 
