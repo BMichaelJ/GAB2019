@@ -123,7 +123,7 @@ DB_KEY	                   CosmosDB Key
 PROJECT	                  webapp
 
 
-Time to add the web app code to our website. The code is in a Github repository located here: https://github.com/JacobFoss/serverless-twitter-app If you want to change the database name in the code you can fork it and change it in the index.js 
+Time to add the web app code to our website. The code is in a Github repository located here: https://github.com/BMichaelJ/GAB2019.git If you want to change the database name in the code you can fork it and change it in the index.js 
 
 1.	Go to the web app in azure
 2.	Choose the deployment center 
@@ -135,10 +135,3 @@ Time to add the web app code to our website. The code is in a Github repository 
 8.	Click create
 9.	When the deployment center is synced 
 10.	Go to the overview tab and click on the URL
-
-
-
-
-
-
-
