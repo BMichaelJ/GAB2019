@@ -92,7 +92,7 @@ Guid is a random generated ID, Description contains a caption and tags from the 
 17.	Add a parameter Partition key
 18.	add Twitter name to it as seen on the picture (important it is in “ ”)
  "Name"
- ![partitionskeydetails](partitionkeydetails.PNG)
+ ![partitionskeydetails](PartitionKeysDetails.PNG)
 
 19.	Click save
 20.	Click Run
