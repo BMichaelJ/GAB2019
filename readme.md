@@ -85,14 +85,14 @@ Our logic app is the trigger of the application. We need it to trigger when a ce
 "user": "@{triggerBody()?['UserDetails']?['FullName']}"
 },
 
-![Logicappdetails](logicappdetails.png)
+![Logicappdetails](logicappdetails.PNG)
 
 Guid is a random generated ID, Description contains a caption and tags from the picture, UTCnow is our timestamp, url of the picture and the user that posted it.
 
 17.	Add a parameter Partition key
 18.	add Twitter name to it as seen on the picture (important it is in “ ”)
  "Name"
- ![partitionskeydetails](partitionkeydetails.png)
+ ![partitionskeydetails](partitionkeydetails.PNG)
 
 19.	Click save
 20.	Click Run
