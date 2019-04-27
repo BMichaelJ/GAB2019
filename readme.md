@@ -1,4 +1,7 @@
 # Cognitive Services Lab
+
+*Modified from orignial repo - https://github.com/benc-uk/serverless-cosmos-lab
+
 This is a hands on lab guide for Azure. In this lab you will deploy a serverless application which uses Azure Cognitive Services to analyze photos gathered from twitter. An Azure Logic App drives the process and carries out most of the tasks. 
 
 The Logic App flow is:
@@ -28,3 +31,5 @@ The guide steps through deploying and configuring the complete end to end soluti
 9. Create a new Web App
 10. Connect Web App to Cosmos DB
 11. View results :)
+
+
