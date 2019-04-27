@@ -1,6 +1,7 @@
 # Cognitive Services Lab
 
 *Modified from orignial repo - https://github.com/benc-uk/serverless-cosmos-lab
+*Credit to Jacob Foss for updating the lab
 
 This is a hands on lab guide for Azure. In this lab you will deploy a serverless application which uses Azure Cognitive Services to analyze photos gathered from twitter. An Azure Logic App drives the process and carries out most of the tasks. 
 
@@ -31,5 +32,30 @@ The guide steps through deploying and configuring the complete end to end soluti
 9. Create a new Web App
 10. Connect Web App to Cosmos DB
 11. View results :)
+
+**************
+1.	Create a resource group for all your resources. 
+2.	In your resource group add a Computer Vision API. 
+3.	Provide the CV a name, location, free pricing tier and the resource group we created prior. 
+4.	Click Create. 
+
+In the computer vision resource, we need to copy some information to a notepad as we will need them later. 
+1.	Go to the CV resource
+2.	In the overview copy the endpoint to a notepad
+3.	In the Keys menu, copy the key to the notepad
+
+In our resource group we will add a cosmosDB
+1.	Select the resource group 
+2.	Give the cosmosdb a global unique name
+3.	The API we use in this lab is Core (SQL)
+4.	Set the Location
+5.	Georedundancy and multi region is not necessary in this lab
+6.	Click create
+
+Time for a coffee while deployment is running. When the CosmosDB is deployed we need to copy some information again. 
+1.	Copy the URI and the keys to the notepad 
+2.	In the data explorer, create a database and collection, in the code I used “mydb” and “photo”
+3.	Set the partition key to /user
+4.	Keep the RU to 400
 
 
